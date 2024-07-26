@@ -13,6 +13,8 @@ app.get("/", (req: Request, res: Response) => {
   res.send("! ==> Welcome to online Nursery <== !");
 });
 
+// ------- routes ended ------- //
+
 // error handlers
 
 // not found route
