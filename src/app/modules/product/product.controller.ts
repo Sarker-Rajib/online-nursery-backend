@@ -1,6 +1,7 @@
+import { catchAsync } from "../../utils/catchAsync";
 import { productServices } from "./product.services";
 
-const createProduct = async (req, res) => {
+const createProduct = catchAsync(async (req, res) => {
   const productData = req.body;
   console.log(productData);
 
@@ -8,9 +9,9 @@ const createProduct = async (req, res) => {
   console.log(result);
 
   res.send(result);
-};
+});
 
-const getProduct = async (req, res) => {
+const getProduct = catchAsync(async (req, res) => {
   const productData = req.body;
   console.log(productData);
 
@@ -18,7 +19,7 @@ const getProduct = async (req, res) => {
   console.log(result);
 
   res.send(result);
-};
+});
 
 export const productController = {
   createProduct,
