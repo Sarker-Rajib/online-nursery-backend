@@ -18,8 +18,14 @@ const updateProductData = async (id: string, payload: TProduct) => {
   return result;
 };
 
+const deleteProductFromDB = async (id: string) => {
+  const result = await Product.findOneAndDelete({ _id: id });
+  return result;
+};
+
 export const productServices = {
   createProductIntoDb,
   getProductsDataFromDb,
   updateProductData,
+  deleteProductFromDB,
 };
