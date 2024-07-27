@@ -3,11 +3,8 @@ import { productServices } from "./product.services";
 
 const createProduct = catchAsync(async (req, res) => {
   const productData = req.body;
-  console.log(productData);
 
   const result = await productServices.createProductIntoDb(productData);
-  console.log(result);
-
   res.send(result);
 });
 
@@ -18,8 +15,13 @@ const getProduct = catchAsync(async (req, res) => {
 
 const updateProduct = catchAsync(async (req, res) => {
   const productData = req.body;
+  const productId = req.params.id;
 
-  const result = await productServices.updateProductData("id", productData);
+  const result = await productServices.updateProductData(
+    productId,
+    productData
+  );
+
   res.send(result);
 });
 

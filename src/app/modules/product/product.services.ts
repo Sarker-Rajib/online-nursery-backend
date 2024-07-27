@@ -15,6 +15,7 @@ const updateProductData = async (id: string, payload: TProduct) => {
   const result = await Product.findOneAndUpdate({ _id: id }, payload, {
     new: true,
   });
+
   return result;
 };
 
