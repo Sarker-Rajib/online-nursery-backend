@@ -12,16 +12,19 @@ const createProduct = catchAsync(async (req, res) => {
 });
 
 const getProduct = catchAsync(async (req, res) => {
-  const productData = req.body;
-  console.log(productData);
-
   const result = await productServices.getProductsDataFromDb();
-  console.log(result);
+  res.send(result);
+});
 
+const updateProduct = catchAsync(async (req, res) => {
+  const productData = req.body;
+
+  const result = await productServices.updateProductData("id", productData);
   res.send(result);
 });
 
 export const productController = {
   createProduct,
   getProduct,
+  updateProduct,
 };
