@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
+import router from "./app/routes";
 
 // define app
 const app = express();
@@ -12,6 +13,7 @@ app.use(express.json());
 app.get("/", (req: Request, res: Response) => {
   res.send("! ==> Welcome to online Nursery <== !");
 });
+app.use("/api/v1", router);
 
 // ------- routes ended ------- //
 
