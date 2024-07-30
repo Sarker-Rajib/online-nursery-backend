@@ -2,7 +2,9 @@
 
 ## Project Overview 🌱
 
-Develop an online nursery website using React, Redux, Node.js, and Express.js. The website will allow users to browse, filter, and search for products, add products to their cart, and make online payments via Stripe.js. Additionally, there will be a product and category management section for CRUD operations.
+Develop an online nursery website using React, Redux, Node.js, and Express.js. 
+The website will allow users to browse, filter, and search for products, add products to their cart, and make online payments via Stripe.js. 
+Additionally, there will be a product and category management section for CRUD operations.
 
 ## 🌟Features
 
