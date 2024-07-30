@@ -7,7 +7,7 @@ const createProductIntoDb = async (payload: TProduct) => {
 };
 
 const getProductsDataFromDb = async () => {
-  const result = await Product.find();
+  const result = await Product.find().select("-__v");
   return result;
 };
 
