@@ -8,8 +8,14 @@ const createProduct = catchAsync(async (req, res) => {
   res.send(result);
 });
 
-const getProduct = catchAsync(async (req, res) => {
+const getAllProduct = catchAsync(async (req, res) => {
   const result = await productServices.getProductsDataFromDb();
+  res.send(result);
+});
+
+const getSingleProduct = catchAsync(async (req, res) => {
+  const id = req.params.id;
+  const result = await productServices.getSingleProductFromDb(id);
   res.send(result);
 });
 
@@ -34,7 +40,8 @@ const deleteProduct = catchAsync(async (req, res) => {
 
 export const productController = {
   createProduct,
-  getProduct,
+  getAllProduct,
+  getSingleProduct,
   updateProduct,
   deleteProduct,
 };

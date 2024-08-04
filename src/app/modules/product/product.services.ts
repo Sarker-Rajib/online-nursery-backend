@@ -7,7 +7,14 @@ const createProductIntoDb = async (payload: TProduct) => {
 };
 
 const getProductsDataFromDb = async () => {
-  const result = await Product.find().select("-__v");
+  const result = await Product.find().select("-__v -createdAt -updatedAt");
+  return result;
+};
+
+const getSingleProductFromDb = async (_id: string) => {
+  const result = await Product.find({ _id }).select(
+    "-__v -createdAt -updatedAt"
+  );
   return result;
 };
 
@@ -29,4 +36,5 @@ export const productServices = {
   getProductsDataFromDb,
   updateProductData,
   deleteProductFromDB,
+  getSingleProductFromDb,
 };
